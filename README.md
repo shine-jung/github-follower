@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# GitHub Follower Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🇺🇸 English | [🇰🇷 한국어](README.ko.md)
 
-Currently, two official plugins are available:
+> 🔍 Analyze your GitHub follower relationships at a glance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ever wondered who follows you and whom you follow? Check if it's mutual or one-way relationships all in one place!
 
-## Expanding the ESLint configuration
+## 🖼️ Screenshot
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![GitHub Follower Checker Main Screen](./screenshots/main.png)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ What you can do
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 👤 **Just enter a GitHub username** - Search for any user you want to analyze
+- 📊 **Clean relationship categorization** - We organize relationships into three types:
+  - **Mutual Follow**: You both follow each other 🤝
+  - **Following Only**: You follow them but they don't follow you back ➡️
+  - **Follower Only**: They follow you but you don't follow them back ⬅️
+- 🔐 **Works without a token!** - But with a token, you can analyze much more
+- 🌐 **Multi-language support** - Available in Korean and English
+- 💾 **Export your analysis results** - Download as JSON files
+- ⚡ **Real-time API usage tracking** - See how many requests you have left
+- 🔄 **Remember your analysis** - Previous results are saved for future visits
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started (For Developers)
+
+### Requirements
+
+- Node.js 18.0 or higher
+- pnpm or npm
+- GitHub token is optional
+
+### Installation
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Creating a GitHub Token (For more analysis)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Click "Generate new token"
+3. Select these permissions:
+   - `read:user` - To read user information
+   - `user:follow` - To read follower/following information
+4. Enter the generated token in the app
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite 7
+- **Styling**: Tailwind CSS 4
+- **Icons**: Lucide React
+- **Date Handling**: date-fns
+- **Linting**: ESLint 9
+
+## 📱 How to Use
+
+1. **Enter Token (Optional)**: If you have a GitHub token, enter it for more analysis
+2. **Search User**: Enter the GitHub username you want to analyze
+3. **Start Analysis**: Just click "Start Analysis" and it begins automatically
+4. **View Results**: Results are neatly organized into three relationship types
+5. **Export Data**: Download as JSON file if you like the results
+
+## 🔒 Your Privacy is Safe
+
+- All data is stored only in your browser (not sent to any server)
+- Your personal information never leaves your device
+- GitHub tokens are safely stored and never leaked externally
+- You can delete tokens and data anytime
+
+## 📄 License
+
+Feel free to use under MIT License!
+
+## 🤝 Let's Build Together
+
+If you have ideas for improvements or found bugs, please let us know! Issues and pull requests are all welcome.
+
+## 📞 Contact
+
+- Bug reports & improvements: [GitHub Issues](https://github.com/shine-jung/github-follower/issues)
+- Full source code: [GitHub Repository](https://github.com/shine-jung/github-follower)
+
+---
+
+**Made with ❤️ for GitHub community**
