@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark Theme */
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --border-hover: #475569;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+html {
+  background-color: var(--background);
+}
