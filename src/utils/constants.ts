@@ -1,4 +1,4 @@
-export const APP_NAME = "GitHub Follower Analyzer";
+export const APP_NAME = "GitHub Follower Checker";
 
 export const GITHUB_API = {
   BASE_URL: "https://api.github.com",
