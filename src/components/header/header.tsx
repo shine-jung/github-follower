@@ -1,4 +1,3 @@
-import { Github } from "lucide-react";
 import { useLanguage } from "../../contexts/language-context";
 import { LanguageToggle } from "./language-toggle";
 import { RateLimitDisplay } from "../rate-limit/rate-limit-display";
@@ -12,9 +11,11 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo and Title */}
           <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
-              <Github className="h-6 w-6 text-white" />
-            </div>
+            <img
+              src="/logo.svg"
+              alt="GFC Logo"
+              className="h-10 w-10 rounded-lg"
+            />
             <div>
               <h1 className="text-base md:text-lg font-bold text-gray-900 dark:text-gray-100">
                 <span className="md:hidden">{t("app.titleShort")}</span>
