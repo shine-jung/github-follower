@@ -18,17 +18,13 @@ function isGitHubError(error: unknown): error is GitHubError {
   );
 }
 
-function isRateLimitError(error: unknown): error is GitHubError & {
-  isRateLimitExceeded: true;
-  rateLimit: GitHubRateLimit;
-} {
+function hasRateLimit(error: unknown): error is { rateLimit: GitHubRateLimit } {
   return (
-    isGitHubError(error) &&
-    "isRateLimitExceeded" in error &&
-    error.isRateLimitExceeded === true &&
+    error !== null &&
+    typeof error === "object" &&
     "rateLimit" in error &&
-    typeof error.rateLimit === "object" &&
-    error.rateLimit !== null
+    error.rateLimit !== null &&
+    typeof error.rateLimit === "object"
   );
 }
 
@@ -77,8 +73,8 @@ function useGitHubApiCall<T, Args extends unknown[] = []>(
         });
         return response.data;
       } catch (error: unknown) {
-        // Rate limit exceeded 에러 처리
-        if (isRateLimitError(error)) {
+        // 에러에 rateLimit 정보가 있으면 UI에 업데이트
+        if (hasRateLimit(error)) {
           updateRateLimit(error.rateLimit);
         }
 
